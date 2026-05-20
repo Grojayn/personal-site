@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人网站</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">G</a>
+      <ul class="nav-links">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#projects">项目</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <p class="hero-greeting">你好，我是</p>
+        <h1 class="hero-name">Grojayn</h1>
+        <p class="hero-title">AI Agent 开发者</p>
+        <p class="hero-bio">
+          专注于 AI Agent 开发与自动化工作流设计，探索 LLM 的无限可能。
+          用代码让智能体更懂世界。
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">查看作品</a>
+          <a href="#contact" class="btn btn-outline">联系我</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">关于我</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              一名 AI Agent 开发者，热衷于探索大语言模型的能力边界。
+              专注于 Agent 架构设计、工具调用和自动化工作流的构建。
+            </p>
+            <p>
+              我相信 AI Agent 将重新定义人与软件的交互方式。
+              通过精心设计的 prompt 和工具链，可以让 AI 完成越来越复杂的任务。
+            </p>
+            <p>
+              持续关注 LLM 领域的最新进展，喜欢动手实践新框架，
+              在 Claude Code、MCP 生态等方向有深入探索。
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">0+</span>
+              <span class="stat-label">年经验</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2</span>
+              <span class="stat-label">完成项目</span>
+            </div>
+            <div class="stat stat-like" id="likeStat">
+              <span class="stat-number" id="likeCount">0</span>
+              <span class="stat-label">满意客户 <span class="like-heart">❤</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">技能</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+            <h3>LLM & Prompt Engineering</h3>
+            <p>Claude, GPT, Prompt 设计与优化</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Agent 框架</h3>
+            <p>Claude Code, MCP 协议, Function Calling</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3>RAG & 知识库</h3>
+            <p>向量数据库, 语义搜索, 文档检索</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>工具 & 自动化</h3>
+            <p>LangChain, CrewAI, AI 工作流编排</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">项目精选</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>个人网站</h3>
+              <p>现代化极简风格的个人展示网站，支持深色/浅色主题切换，响应式设计。</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Vercel</span>
+              </div>
+              <a href="clipboard-history.html" class="project-link">查看项目 →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="2" width="12" height="20" rx="2" ry="2"/><path d="M4 6h2M4 10h2M4 14h2M4 18h2"/></svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>ClipboardHistory</h3>
+              <p>轻量级 Windows 剪贴板历史管理工具，支持文本与图片实时捕获、SHA256 去重、内联编辑，全局热键 Alt+V 快速唤起，一键粘贴到任意应用。</p>
+              <div class="project-tags">
+                <span>C#</span>
+                <span>WPF</span>
+                <span>.NET 6.0</span>
+                <span>Windows</span>
+              </div>
+              <a href="clipboard-history.html" class="project-link">查看项目 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">联系我</h2>
+        <p class="contact-subtitle">有项目想要合作？欢迎随时联系。</p>
+        <div class="contact-links">
+          <a href="mailto:116xxx@qq.com" class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>116xxx@qq.com</span>
+          </a>
+          <a href="https://github.com/grojayn" target="_blank" rel="noopener" class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Grojayn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipboardHistory - Grojayn</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .project-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .project-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .project-detail {
+      padding: 40px 0 80px;
+    }
+    .detail-section {
+      margin-bottom: 48px;
+    }
+    .detail-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .feature-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .feature-item h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tech-stack span {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .download-btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Grojayn</a>
+      <div class="nav-links">
+        <a href="index.html#about">关于</a>
+        <a href="index.html#skills">技能</a>
+        <a href="index.html#projects">项目</a>
+        <a href="index.html#contact">联系</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1>ClipboardHistory</h1>
+        <p class="subtitle">轻量级 Windows 剪贴板历史管理工具，WPF .NET 6.0 构建，常驻系统托盘，Alt+V 秒速唤起。</p>
+        <div class="tech-stack" style="justify-content: center; margin-top: 24px;">
+          <span>C# 12</span>
+          <span>WPF</span>
+          <span>.NET 6.0</span>
+          <span>Win32 API</span>
+          <span>Windows</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <div class="container">
+        <div class="detail-section">
+          <h2>项目概述</h2>
+          <p>一款常驻系统托盘的 Windows 剪贴板增强工具。实时监控剪贴板变化，自动记录文本和图片内容，通过全局热键 Alt+V 快速唤起浮窗，支持搜索、内联编辑、图钉固定、一键粘贴到任意应用。窗口可自由拖拽调整大小，底部一键清空全部历史。</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>核心功能</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h3>实时监控</h3>
+              <p>Win32 AddClipboardFormatListener 监听剪贴板，文本与图片自动捕获</p>
+            </div>
+            <div class="feature-item">
+              <h3>SHA256 去重</h3>
+              <p>对连续相同内容自动去重，避免重复记录</p>
+            </div>
+            <div class="feature-item">
+              <h3>全局热键</h3>
+              <p>Alt+V 随时唤起浮窗，不打断当前工作流</p>
+            </div>
+            <div class="feature-item">
+              <h3>一键粘贴</h3>
+              <p>点击卡片自动回写剪贴板并模拟 Ctrl+V，粘贴到任意应用</p>
+            </div>
+            <div class="feature-item">
+              <h3>内联编辑</h3>
+              <p>点击卡片编辑按钮直接修改文本内容，Enter 保存 Esc 取消</p>
+            </div>
+            <div class="feature-item">
+              <h3>搜索过滤</h3>
+              <p>实时关键词搜索，快速定位历史记录</p>
+            </div>
+            <div class="feature-item">
+              <h3>图钉固定</h3>
+              <p>固定常用内容置顶显示，不受过期清理影响</p>
+            </div>
+            <div class="feature-item">
+              <h3>7天自动清理</h3>
+              <p>上限 100 条，非固定内容 7 天后自动过期，底部一键清空全部</p>
+            </div>
+            <div class="feature-item">
+              <h3>自由窗口</h3>
+              <p>标题栏拖拽移动，边缘 6px 热区拖拽调整大小，开机自启后台运行</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>技术架构</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h3>Models</h3>
+              <p>C# record 定义 ClipboardItem，支持 Text/Image 两种类型，含 Id、时间戳、置顶状态</p>
+            </div>
+            <div class="feature-item">
+              <h3>ClipboardMonitor</h3>
+              <p>HWND 消息钩子 + PNG 编码 + SHA256 哈希对比，解耦事件通知</p>
+            </div>
+            <div class="feature-item">
+              <h3>StorageService</h3>
+              <p>SemaphoreSlim 线程安全 JSON 持久化，支持增删改查、置顶切换、内联编辑、过期清理</p>
+            </div>
+            <div class="feature-item">
+              <h3>PasteService</h3>
+              <p>Clipboard.SetText/SetImage 回写 + SendInput 模拟 Ctrl+V 四步按键序列，异步执行</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>下载使用</h2>
+          <a href="downloads/ClipboardHistory.exe" class="download-btn">下载 ClipboardHistory.exe</a>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">需要 <a href="https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0" target="_blank" rel="noopener" style="color: var(--accent);">.NET 6.0 桌面运行时</a>。下载后双击运行，自动缩小到系统托盘，按 Alt+V 开始使用。</p>
+        </div>
+
+        <a href="index.html#projects" class="back-link">← 返回项目列表</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Grojayn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
