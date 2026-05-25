@@ -42,31 +42,28 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 const likeStat = document.getElementById('likeStat');
 const likeCount = document.getElementById('likeCount');
 
-const storedLikes = localStorage.getItem('like_count');
-const hasLiked = localStorage.getItem('liked') === 'true';
+let hasLiked = localStorage.getItem('liked') === 'true';
+let likeNum = parseInt(localStorage.getItem('like_count'), 10) || 0;
 
-if (storedLikes) {
-  likeCount.textContent = storedLikes;
-}
-
+likeCount.textContent = likeNum;
 if (hasLiked) {
   likeStat.classList.add('liked');
 }
 
 likeStat.addEventListener('click', () => {
-  if (hasLiked || likeStat.classList.contains('liked')) return;
+  hasLiked = !hasLiked;
+  likeNum += hasLiked ? 1 : -1;
 
-  const current = parseInt(likeCount.textContent, 10) || 0;
-  const next = current + 1;
+  likeCount.textContent = likeNum;
+  localStorage.setItem('like_count', likeNum);
+  localStorage.setItem('liked', hasLiked);
 
-  likeCount.textContent = next;
-  localStorage.setItem('like_count', next);
-  localStorage.setItem('liked', 'true');
-  likeStat.classList.add('liked', 'like-pop');
-
-  setTimeout(() => {
-    likeStat.classList.remove('like-pop');
-  }, 400);
+  if (hasLiked) {
+    likeStat.classList.add('liked', 'like-pop');
+    setTimeout(() => likeStat.classList.remove('like-pop'), 400);
+  } else {
+    likeStat.classList.remove('liked');
+  }
 });
 
 // Navbar shadow on scroll
