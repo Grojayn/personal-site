@@ -1,0 +1,355 @@
+﻿/* ===== 全局重置 ===== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  background: #F5F0EB;
+  color: #5C5550;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 页面切换 ===== */
+.page {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+}
+.page.active { display: flex; }
+
+/* ===== 首页 ===== */
+.setup-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 28px 32px;
+  overflow-y: auto;
+}
+.app-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #4A4540;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 8px;
+}
+.app-subtitle {
+  font-size: 15px;
+  color: #9C928A;
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: 4px;
+}
+
+/* ===== 分组 ===== */
+.setup-section { margin-bottom: 24px; }
+.section-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8A8078;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* ===== Chip 按钮组 ===== */
+.chip-group {
+  display: flex;
+  gap: 10px;
+}
+.chip {
+  flex: 1;
+  padding: 12px 0;
+  border: 1.5px solid #D6CDC4;
+  border-radius: 12px;
+  background: #F0EBE5;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7A726A;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+}
+.chip:active { transform: scale(0.96); }
+.chip.active {
+  background: #C8BFB5;
+  border-color: #B8AFA5;
+  color: #4A4540;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ===== 开始按钮 ===== */
+.btn-start {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: #B8AFA5;
+  color: #F5F0EB;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  margin-bottom: 28px;
+}
+.btn-start:active { transform: scale(0.97); background: #A89F95; }
+
+/* ===== 最佳记录 ===== */
+.best-section { flex-shrink: 0; }
+.best-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.best-empty {
+  font-size: 14px;
+  color: #B8AFA5;
+  text-align: center;
+  padding: 12px;
+}
+.best-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #F0EBE5;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #5C5550;
+}
+.best-item .best-label { font-weight: 500; }
+.best-item .best-time {
+  font-weight: 600;
+  color: #7A726A;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== 游戏页 - 顶部栏 ===== */
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  background: #F5F0EB;
+  border-bottom: 1px solid #E3DBD1;
+  flex-shrink: 0;
+}
+.btn-icon {
+  width: 40px; height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #EBE5DD;
+  font-size: 20px;
+  color: #7A726A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.btn-icon:active { background: #D6CDC4; }
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #7A726A;
+  font-variant-numeric: tabular-nums;
+}
+.stat-divider { color: #D6CDC4; font-size: 14px; }
+.stat b { color: #4A4540; font-weight: 600; }
+
+/* ===== 网格 ===== */
+.grid-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.grid {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+}
+[data-size="8"] { gap: 5px; }
+[data-size="4"] { gap: 10px; }
+
+/* ===== 网格卡片 ===== */
+.cell {
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #F5F0EB;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  -webkit-touch-callout: none;
+  aspect-ratio: 1;
+}
+.cell:active { transform: scale(0.92); }
+[data-size="8"] .cell { border-radius: 8px; }
+[data-size="4"] .cell { border-radius: 14px; }
+
+/* 已完成 */
+.cell.done {
+  opacity: 0.2;
+  transform: scale(0.85);
+  pointer-events: none;
+}
+
+/* 点对 */
+.cell.correct-flash {
+  animation: correctPop 0.3s ease;
+}
+@keyframes correctPop {
+  0% { transform: scale(1); opacity: 1; }
+  40% { transform: scale(1.15); opacity: 0.9; }
+  100% { transform: scale(0.85); opacity: 0.2; }
+}
+
+/* 点错 */
+.cell.wrong-shake {
+  animation: wrongShake 0.35s ease;
+}
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* 数字隐藏（倒计时期间） */
+.cell.hidden-num {
+  color: transparent !important;
+}
+
+/* ===== 倒计时 ===== */
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F0EB;
+  z-index: 10;
+  border-radius: 12px;
+}
+.countdown-num {
+  font-size: 80px;
+  font-weight: 700;
+  color: #4A4540;
+  animation: countPop 0.8s ease;
+}
+@keyframes countPop {
+  0% { transform: scale(1.6); opacity: 0.2; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+.countdown-num.go {
+  font-size: 56px;
+  color: #B8AFA5;
+}
+
+/* ===== 底部 ===== */
+.game-footer {
+  padding: 12px 20px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.mode-badge {
+  font-size: 13px;
+  color: #9C928A;
+  letter-spacing: 1px;
+}
+
+/* ===== 弹窗 ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 69, 64, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 32px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: #F5F0EB;
+  border-radius: 24px;
+  padding: 36px 32px 28px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(74,69,64,0.15);
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  0% { opacity: 0; transform: scale(0.9) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-emoji { font-size: 48px; margin-bottom: 8px; }
+.modal-time {
+  font-size: 48px;
+  font-weight: 700;
+  color: #4A4540;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+.modal-detail { font-size: 15px; color: #9C928A; margin-bottom: 6px; }
+.modal-record {
+  font-size: 16px;
+  font-weight: 600;
+  color: #B8AFA5;
+  min-height: 24px;
+  margin-bottom: 24px;
+}
+.modal-record.is-record { color: #7A726A; }
+.modal-actions { display: flex; gap: 10px; }
+.modal-btn {
+  flex: 1;
+  padding: 14px 0;
+  border: 1.5px solid #D6CDC4;
+  border-radius: 12px;
+  background: #F0EBE5;
+  font-size: 15px;
+  font-weight: 500;
+  color: #5C5550;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.modal-btn:active { transform: scale(0.96); }
+.modal-btn.primary {
+  background: #B8AFA5;
+  border-color: #B8AFA5;
+  color: #F5F0EB;
+}
+.modal-btn.primary:active { background: #A89F95; }
+
+/* ===== 安全区适配 ===== */
+@supports (padding: env(safe-area-inset-top)) {
+  .setup-inner { padding-top: calc(48px + env(safe-area-inset-top)); }
+  .game-header { padding-top: calc(16px + env(safe-area-inset-top)); }
+  .game-footer { padding-bottom: calc(20px + env(safe-area-inset-bottom)); }
+}
