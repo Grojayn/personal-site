@@ -197,6 +197,24 @@
               <a href="game/index.html" class="project-link">开始游戏 →</a>
             </div>
           </article>
+          <article class="project-card">
+            <div class="project-image" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);">
+              <div class="project-placeholder" style="color: #db2777; opacity: 0.55;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>RAG 个人助手</h3>
+              <p>基于检索增强生成技术构建的个人 AI 知识问答。喂入个人知识库后，可回答关于技术背景、项目经验、设计理念等问题，支持多轮对话。</p>
+              <div class="project-tags">
+                <span>RAG</span>
+                <span>LLM</span>
+                <span>Dify</span>
+                <span>AI</span>
+              </div>
+              <a href="rag-assistant.html" class="project-link">查看项目 →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -233,5 +251,45 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Dify Chatbot -->
+  <script>
+   window.difyChatbotConfig = {
+    token: '3CijxQpt768W5zv9',
+   }
+  </script>
+  <script src="https://udify.app/embed.min.js" id="3CijxQpt768W5zv9" defer></script>
+  <style>
+    #dify-chatbot-bubble-button {
+      background-color: #2563eb !important;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3) !important;
+    }
+    #dify-chatbot-bubble-button:hover {
+      background-color: #1d4ed8 !important;
+    }
+    #dify-chatbot-bubble-window {
+      width: 24rem !important;
+      height: 40rem !important;
+      border-radius: 12px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04) !important;
+    }
+    #dify-chatbot-bubble-button,
+    #dify-chatbot-bubble-window {
+      position: fixed !important;
+      z-index: 9999 !important;
+    }
+    [class*="watermark"],
+    [class*="Watermark"],
+    [class*="powered"],
+    [class*="Powered"],
+    div:has(> a[href*="dify"]) {
+      display: none !important;
+    }
+    /* 如果上面不生效，试试这个 */
+    #dify-chatbot-bubble-window footer,
+    #dify-chatbot-bubble-window .css-1dbjc4n:last-child {
+      display: none !important;
+    }
+  </style>
 </body>
 </html>

@@ -1,0 +1,65 @@
+#topic: 个人简介
+我叫 Grojayn，一名 AI Agent 开发者，专注于 Agent 架构设计、工具调用和自动化工作流构建。
+
+#topic: 个人简介
+我相信 AI Agent 将重新定义人与软件的交互方式。通过精心设计的 prompt 和工具链，可以让 AI 完成越来越复杂的任务。
+
+#topic: 个人简介
+持续关注 LLM 领域的最新进展，喜欢动手实践新框架，在 Claude Code、MCP 生态等方向有深入探索。
+
+#topic: 技能
+LLM & Prompt Engineering：擅长 Claude、GPT 等大语言模型的 Prompt 设计与优化，熟悉不同模型的特性差异和最佳使用方式。
+
+#topic: 技能
+Agent 框架：精通 Claude Code、MCP 协议（Model Context Protocol）、Function Calling 等 Agent 相关技术。能设计多步骤工具调用链，构建具备自主决策能力的 AI Agent。
+
+#topic: 技能
+RAG & 知识库：掌握向量数据库、语义搜索、文档检索等 RAG（检索增强生成）技术。能搭建基于本地知识库的智能问答系统。
+
+#topic: 技能
+工具 & 自动化：熟悉 LangChain、CrewAI 等 AI 工作流编排框架，擅长将 AI 能力融入自动化流程。
+
+#topic: 技术偏好
+零第三方依赖优先。ClipboardHistory 和 PlanClip 均无 NuGet 包，仅靠 .NET 框架和 Win32 P/Invoke 实现全部功能。
+
+#topic: 技术偏好
+性能优先。系统字体无 FOUT/CLS，exe 单文件框架依赖约 200KB。纯前端优先，个人网站和游戏无后端，PWA 离线可用。
+
+#topic: 项目_个人网站
+现代化极简风格的个人作品集网站，支持深色/浅色主题切换、响应式设计、移动端汉堡菜单、滚动渐入动画。设计系统基于"晨光工作室"理念，蓝色点缀加高对比度中性色。技术栈 HTML、CSS、JavaScript，部署在 Vercel。
+
+#topic: 项目_个人网站
+设计原则：少即是多（每处元素都有理由）、真材实料（用项目说话不用营销词）、移动优先（从手机屏设计）、系统字体优先（不引入 Web 字体，加载即渲染）。
+
+#topic: 项目_ClipboardHistory
+轻量级 Windows 剪贴板历史管理工具，WPF .NET 8.0 构建，零第三方依赖。常驻系统托盘，全局热键 Alt+V 快速唤起浮窗。技术栈 C# 12、Win32 API。
+
+#topic: 项目_ClipboardHistory
+核心功能：Win32 AddClipboardFormatListener 实时监听文本和图片、SHA256 哈希去重、卡片式 UI 含搜索和滤、点击卡片一键粘贴（模拟 Ctrl+V）、内联编辑文字、图钉固定优先排列、上限 100 条加 7 天自动清理、注册表开机自启。
+
+#topic: 项目_ClipboardHistory
+技术架构：ClipboardMonitor 负责 HWND 消息钩子和 PNG 编码，StorageService 负责 SemaphoreSlim 线程安全 JSON 持久化存于 LocalAppData，PasteService 负责回写剪贴板加 SendInput 模拟四步按键序列，NativeMethods 集中管理 7 个 P/Invoke 声明。
+
+#topic: 项目_PlanClip
+计划清单加剪贴板历史二合一效率工具。在 ClipboardHistory 基础上新增完整 Todo List 模块。技术栈 C# 10、WPF、.NET 6.0、Win32 API、零第三方依赖。
+
+#topic: 项目_PlanClip
+计划清单功能：搜索框回车或底部按钮一键添加待办、DatePicker 选择截止日期加独立时分输入默认 23:59 自动排序、下拉 Popup 一键切换 All Pending Completed 视图、内联编辑标题 Enter 保存 Esc 取消、完成标记按钮变绿自动归入 Completed、置顶排序（置顶优先于截止日于创建时间）、底部一键清空。
+
+#topic: 项目_PlanClip
+粘贴板历史功能继承自 ClipboardHistory：实时监听文字图片、SHA256 去重、一键粘贴、图钉固定、上限 100 条加 7 天清理。计划与粘贴板通过顶部按钮一键切换，共用 Alt+V 全局热键。
+
+#topic: 项目_数字顺序点击游戏
+基于舒尔特表原理的 PWA 网页游戏。手机浏览器可安装到桌面全屏运行，无需应用商店。技术栈 HTML、CSS、JavaScript、PWA（manifest.json 加 Service Worker）、localStorage，零依赖。
+
+#topic: 项目_数字顺序点击游戏
+支持 3 种尺寸（4×4 16 格、5×5 25 格、8×8 64 格）加 2 种模式（顺序 1 到 N、倒序 N 到 1）。自动计时精确 0.1s。视觉反馈点对淡出消失点错左右抖动。触觉反馈手机震动。每个数字随机分配莫兰迪低饱和色。每种尺寸乘模式组合独立记录最佳成绩存 localStorage。完成弹窗动画显示用时刷新纪录有奖杯标识。Service Worker 缓存离线可用。适配 iPhone 安全区。
+
+#topic: 设计理念
+设计系统"晨光工作室"（The Morning Studio）。品牌个性清新、创意、优雅。色彩策略克制蓝占屏不超 10% 加高对比度白底灰字。字体用系统栈（-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif）。
+
+#topic: 设计理念
+反 AI 模板原则：不用渐变色文字，不用玻璃态卡片装饰，不用暖调奶油沙色米色主背景，不用 side-stripe 边框装饰，不用 hero-metric 大数字渐变色 SaaS 统计条，不用小号大写追踪标签如 ABOUT PROJECTS CONTACT，不用编号 section 标记如 01 02 03。
+
+#topic: 联系方式
+GitHub 地址 github.com/Grojayn。邮箱 116xxx@qq.com。网站地址 personal-site-eight-rho.vercel.app。

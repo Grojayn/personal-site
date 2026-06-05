@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG 个人助手 - Grojayn</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .project-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+    .project-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .project-detail {
+      padding: 40px 0 80px;
+    }
+    .detail-section {
+      margin-bottom: 48px;
+    }
+    .detail-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .feature-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .feature-item h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      text-wrap: balance;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tech-stack span {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .highlight-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container nav-inner">
+      <a href="index.html" class="nav-logo">G</a>
+      <div class="nav-links" style="display: flex; gap: 32px;">
+        <a href="index.html#about">关于</a>
+        <a href="index.html#skills">技能</a>
+        <a href="index.html#projects">项目</a>
+        <a href="index.html#contact">联系</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1>RAG 个人助手</h1>
+        <p class="subtitle">基于检索增强生成技术构建的个人 AI 知识问答系统。喂入个人知识库后，可回答关于技术背景、项目经验、设计理念等问题。</p>
+        <div class="tech-stack" style="justify-content: center; margin-top: 24px;">
+          <span>RAG</span>
+          <span>LLM</span>
+          <span>Dify</span>
+          <span>Embedding</span>
+          <span>向量数据库</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <div class="container">
+        <div class="detail-section">
+          <h2>项目概述</h2>
+          <p>一个嵌入个人网站的 AI 问答助手，基于 RAG（检索增强生成）技术。将个人背景、技能、项目经验、设计理念等整理为结构化的知识库文本，通过向量嵌入存入数据库。用户提问时，系统检索相关语段作为上下文，再由 LLM 生成准确回答。最终以聊天气泡形式嵌入网站右下角，访问者可以随时对话了解我。</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>技术链路</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h3>知识库构建</h3>
+              <p>将个人简介、技能、项目、设计理念、联系方式整理成分段 TXT，每段标注 #topic 元数据</p>
+            </div>
+            <div class="feature-item">
+              <h3>文本分块</h3>
+              <p>以 \n\n 为分隔符切分知识块，保持语义完整。每块包含足够的上下文信息可独立理解</p>
+            </div>
+            <div class="feature-item">
+              <h3>向量嵌入</h3>
+              <p>将每个文本块通过 Embedding 模型转为高维向量，存入向量数据库，支持语义相似度检索</p>
+            </div>
+            <div class="feature-item">
+              <h3>检索增强</h3>
+              <p>用户提问时，将问题同样向量化，从知识库中检索最相关的 Top-K 语段作为上下文</p>
+            </div>
+            <div class="feature-item">
+              <h3>LLM 生成</h3>
+              <p>将检索到的语段拼接为 System Prompt 喂给 LLM，以第一人称身份回答用户问题</p>
+            </div>
+            <div class="feature-item">
+              <h3>网站嵌入</h3>
+              <p>通过 Dify 的 embed.js 将聊天窗口嵌入个人网站，右下角气泡式交互，支持多轮对话</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>知识库结构</h2>
+          <div class="highlight-box">knowledge-base.txt
+├── 个人简介（3段）
+├── 技能领域（4段）
+├── 技术偏好（2段）
+├── 项目经验（7段：网站、ClipboardHistory、PlanClip、游戏）
+├── 设计理念（2段）
+└── 联系方式（1段）
+
+共 19 个知识块，每个 #topic: 标记作为检索元数据</div>
+        </div>
+
+        <a href="index.html" class="back-link">← 返回首页试试右下角聊天气泡</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Grojayn</p>
+        <div class="footer-links">
+          <a href="https://github.com/grojayn" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:116xxx@qq.com">Email</a>
+          <a href="index.html#hero">回到顶部</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) html.setAttribute('data-theme', savedTheme);
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 10 ? '0 1px 3px rgba(0,0,0,0.08)' : 'none';
+    });
+  </script>
+</body>
+</html>
