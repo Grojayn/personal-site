@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIvideo - Grojayn</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .project-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .project-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .project-detail {
+      padding: 40px 0 80px;
+    }
+    .detail-section {
+      margin-bottom: 48px;
+    }
+    .detail-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .feature-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .feature-item h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tech-stack span {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .hero-btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .hero-btn.primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    }
+    .hero-btn.outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .hero-btn.outline:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+    }
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 16px 0;
+    }
+    .pipeline-step {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: center;
+      min-width: 120px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .pipeline-step .step-num {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .pipeline-arrow {
+      display: flex;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Grojayn</a>
+      <div class="nav-links">
+        <a href="index.html#about">关于</a>
+        <a href="index.html#skills">技能</a>
+        <a href="index.html#projects">项目</a>
+        <a href="index.html#contact">联系</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1>AIvideo</h1>
+        <p class="subtitle">全自动 AI 短视频流水线。一句话主题 → LLM 剧本 → AI 生视频 → TTS 配音 → FFmpeg 合成 → 一键发布抖音。三道坎压成一句话。</p>
+        <div class="hero-actions">
+          <a href="https://github.com/Grojayn/AIvideo-opensource" target="_blank" rel="noopener" class="hero-btn primary">GitHub 开源</a>
+        </div>
+        <div class="tech-stack" style="justify-content: center; margin-top: 24px;">
+          <span>Python</span>
+          <span>MCP Server</span>
+          <span>Claude Code</span>
+          <span>Edge TTS</span>
+          <span>FFmpeg</span>
+          <span>Playwright</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <div class="container">
+        <div class="detail-section">
+          <h2>项目概述</h2>
+          <p>做 AI 短视频有三道坎：写剧本耗脑力、AI 生视频要来回调、发抖音得手动填描述标签。AIvideo 把三道坎压成一句话 — 你说主题，剩下全自动。基于 Claude Code MCP 协议深度集成，/makevideo 命令触发全套流水线。适合做连载故事的创作者、AI 内容矩阵和个人博主。</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>工作流</h2>
+          <div class="pipeline">
+            <div class="pipeline-step"><span class="step-num">1</span>LLM 剧本<br>shots.json</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step"><span class="step-num">2</span>MCP 提交<br>task_id 秒返</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step"><span class="step-num">3</span>后台轮询<br>video_results</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step"><span class="step-num">4</span>TTS + FFmpeg<br>合成转码</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step"><span class="step-num">5</span>Playwright<br>发布抖音</div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>核心功能</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h3>主题 → 剧本</h3>
+              <p>LLM 根据一句话主题自动生成分镜脚本 JSON + 元数据，故事连贯有节奏</p>
+            </div>
+            <div class="feature-item">
+              <h3>多模型支持</h3>
+              <p>默认 Agnes 免费 API（0 成本），可切换 Seedance / Kling 付费模型获更高画质</p>
+            </div>
+            <div class="feature-item">
+              <h3>自动排队优化</h3>
+              <p>MCP 秒返 task_id，Bash 后台轮询不阻塞工作流，完成后自动接续下一步</p>
+            </div>
+            <div class="feature-item">
+              <h3>Edge TTS 配音</h3>
+              <p>微软 Edge TTS 免费语音合成，自动匹配剧本旁白，无需额外 API Key</p>
+            </div>
+            <div class="feature-item">
+              <h3>FFmpeg 音画合成</h3>
+              <p>自动拼接视频片段 + 混合 TTS 音频 + 抖音规格转码，输出 final_douyin.mp4</p>
+            </div>
+            <div class="feature-item">
+              <h3>一键发布抖音</h3>
+              <p>Playwright 自动化填写标题、描述、标签、AI 声明，浏览器不关交给用户最后确认</p>
+            </div>
+            <div class="feature-item">
+              <h3>Claude Code 集成</h3>
+              <p>MCP Server 注册为 video-pipeline，/makevideo Skill 一句话即可启动全流程</p>
+            </div>
+            <div class="feature-item">
+              <h3>Windows 友好</h3>
+              <p>处理 GBK 编码兼容、asyncio 隔离等 Windows 特有坑，开箱即用</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>技术架构</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h3>MCP Server</h3>
+              <p>FastMCP 框架，4 个工具：submit_video / poll_video / list_outputs / cleanup_outputs</p>
+            </div>
+            <div class="feature-item">
+              <h3>monitor_task</h3>
+              <p>后台轮询 Agnes 视频生成进度，完成后自动保存 video_results.json</p>
+            </div>
+            <div class="feature-item">
+              <h3>editor</h3>
+              <p>TTS 语音合成 + FFmpeg 片段拼接 + 音频混流 + 抖音 H.264 转码</p>
+            </div>
+            <div class="feature-item">
+              <h3>publisher</h3>
+              <p>Playwright Chromium 打开抖音创作者中心，自动填入标题/描述/标签/AI声明/定时发布</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#projects" class="back-link">← 返回项目列表</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Grojayn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
