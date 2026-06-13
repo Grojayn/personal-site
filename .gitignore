@@ -4,3 +4,4 @@ node_modules/
 *.pdb
 .env
 .env.local
+.impeccable/
